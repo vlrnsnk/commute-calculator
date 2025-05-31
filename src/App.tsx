@@ -6,11 +6,12 @@ import type { CommuteData } from './types/common';
 import { CommuteResult } from './components/CommuteResult/CommuteResult';
 
 const App = (): ReactElement => {
-  const [result, setResult] = useState<CommuteData | null>(null);
-
-  const handleCalculate = (data: CommuteData): void => {
-    setResult(data);
-  };
+  const [commuteData, setCommuteData] = useState<CommuteData>({
+    workDays: 0,
+    workMiles: 0,
+    schoolDays: 0,
+    schoolMiles: 0,
+  });
 
   return (
     <div className='min-h-screen p-4 md:p-8'>
@@ -21,8 +22,13 @@ const App = (): ReactElement => {
           </h1>
           <ThemeSwitcher />
         </div>
-        <CommuteForm onCalculate={handleCalculate}/>
-        {result && <CommuteResult {...result} />}
+        <CommuteForm onInputChange={(data) => setCommuteData(data)} />
+        <CommuteResult
+          workDays={commuteData.workDays}
+          workMiles={commuteData.workMiles}
+          schoolDays={commuteData.schoolDays}
+          schoolMiles={commuteData.schoolMiles}
+        />
       </div>
     </div>
   )

@@ -3,10 +3,10 @@ import type { CommuteData } from '../../types/common';
 import { Input } from '../Input/Input';
 
 type CommuteFormProps = {
-  onCalculate: (data: CommuteData) => void;
+  onInputChange: (data: CommuteData) => void;
 };
 
-const CommuteForm = ({ onCalculate }: CommuteFormProps): ReactElement => {
+const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
   const [formData, setFormData] = useState<CommuteData>({
     workDays: 0,
     workMiles: 0,
@@ -16,15 +16,16 @@ const CommuteForm = ({ onCalculate }: CommuteFormProps): ReactElement => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
+    const newData = {
+      ...formData,
       [name]: Number(value) >= 0 ? Number(value) : 0,
-    }));
+    };
+    setFormData(newData);
+    onInputChange(newData);
   };
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    onCalculate(formData);
   };
 
   return (
@@ -35,7 +36,7 @@ const CommuteForm = ({ onCalculate }: CommuteFormProps): ReactElement => {
         </h2>
 
         <div className='grid grid-cols-3 gap-4 mb-6'>
-          <div className='font-semibold'>Category</div>
+          <div className='font-semibold'></div>
           <div className='font-semibold'>Days</div>
           <div className='font-semibold'>Miles each way</div>
 
@@ -69,13 +70,6 @@ const CommuteForm = ({ onCalculate }: CommuteFormProps): ReactElement => {
             min={0}
           />
         </div>
-
-        <button
-          type='submit'
-          className='bg-geico-blue hover:bg-geico-darkblue text-white px-4 py-2 rounded transition-colors cursor-pointer'
-        >
-          Calculate
-        </button>
       </div>
     </form>
   );
