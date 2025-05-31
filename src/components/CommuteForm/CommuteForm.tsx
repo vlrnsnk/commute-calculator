@@ -43,6 +43,7 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
           <div className="font-semibold">Work:</div>
           <Input
             name='workDays'
+            aria-label='workDays'
             value={formData.workDays}
             onChange={handleChange}
             min={0}
@@ -50,6 +51,7 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
           />
           <Input
             name='workMiles'
+            aria-label='workMiles'
             value={formData.workMiles}
             onChange={handleChange}
             min={0}
@@ -58,6 +60,7 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
           <div className="font-semibold">School:</div>
           <Input
             name='schoolDays'
+            aria-label='schoolDays'
             value={formData.schoolDays}
             onChange={handleChange}
             min={0}
@@ -65,6 +68,7 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
           />
           <Input
             name='schoolMiles'
+            aria-label='schoolMiles'
             value={formData.schoolMiles}
             onChange={handleChange}
             min={0}
