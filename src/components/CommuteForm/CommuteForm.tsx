@@ -30,15 +30,15 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
 
   return (
     <form onSubmit={handleSubmit} className='space-y-6'>
-      <div className='bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md'>
-        <h2 className='text-xl font-bold mb-4 text-geico-blue dark:text-geico-lightblue'>
+      <div className='bg-gray-50 dark:bg-blue-950 p-6 rounded-lg shadow-md'>
+        <h2 className='text-xl font-bold mb-4 text-blue-800 dark:text-sky-300'>
           Vehicle Usage - Work/School Combination
         </h2>
 
         <div className='grid grid-cols-3 gap-4 mb-6'>
-          <div className='font-semibold'></div>
-          <div className='font-semibold'>Days</div>
-          <div className='font-semibold'>Miles each way</div>
+          <div></div>
+          <div className='font-semibold text-blue-800 dark:text-sky-200'>Days</div>
+          <div className='font-semibold text-blue-800 dark:text-sky-200'>Miles each way</div>
 
           <div>Work:</div>
           <Input

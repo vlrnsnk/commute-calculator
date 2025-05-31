@@ -1,52 +1,7 @@
 @import "tailwindcss";
 
-:root {
-  /* GEICO color palette */
-  --geico-blue: #043d90;
-  --geico-lightblue: #1e90ff;
-  --geico-green: #4CAF50;
-  --geico-darkblue: #032a5d;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  /* Light theme colors */
-  --bg-color: #f9fafb;
-  --text-color: #111827;
-  --card-bg: #ffffff;
-  --input-bg: #ffffff;
-  --border-color: #e5e7eb;
-  background-color: lightgray;
-}
-
-/* Dark theme colors */
-.dark {
-  --bg-color: #111827;
-  --text-color: #f3f4f6;
-  --card-bg: #1f2937;
-  --input-bg: #374151;
-  --border-color: #4b5563;
-  background-color: darkslategray;
-}
-
-body {
-    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
-}
-
-/* Utility classes */
-.bg-geico-blue {
-  background-color: var(--geico-blue);
-}
-.bg-geico-lightblue {
-  background-color: var(--geico-lightblue);
-}
-.bg-geico-green {
-  background-color: var(--geico-green);
-}
-.bg-geico-darkblue {
-  background-color: var(--geico-darkblue);
-}
-
-.text-geico-blue {
-  color: var(--geico-blue);
-}
-.text-geico-lightblue {
-  color: var(--geico-lightblue);
+html {
+  transition: background-color 0.3s, color 0.3s;
 }
