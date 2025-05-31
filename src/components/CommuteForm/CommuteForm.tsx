@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent, type ReactElement } from 'react';
 import type { CommuteData } from '../../types/common';
+import { Input } from '../Input/Input';
 
 type CommuteFormProps = {
   onCalculate: (data: CommuteData) => void;
@@ -39,41 +40,33 @@ const CommuteForm = ({ onCalculate }: CommuteFormProps): ReactElement => {
           <div className='font-semibold'>Miles each way</div>
 
           <div>Work:</div>
-          <input
-            type='number'
+          <Input
             name='workDays'
             value={formData.workDays}
             onChange={handleChange}
-            className='border rounded px-2 py-1 dark:bg-gray-700'
-            min='0'
-            max='7'
+            min={0}
+            max={7}
           />
-          <input
-            type='number'
+          <Input
             name='workMiles'
             value={formData.workMiles}
             onChange={handleChange}
-            className='border rounded px-2 py-1 dark:bg-gray-700'
-            min='0'
+            min={0}
           />
 
           <div>School:</div>
-          <input
-            type='number'
+          <Input
             name='schoolDays'
             value={formData.schoolDays}
             onChange={handleChange}
-            className='border rounded px-2 py-1 dark:bg-gray-700'
-            min='0'
-            max='7'
+            min={0}
+            max={7}
           />
-          <input
-            type='number'
+          <Input
             name='schoolMiles'
             value={formData.schoolMiles}
             onChange={handleChange}
-            className='border rounded px-2 py-1 dark:bg-gray-700'
-            min='0'
+            min={0}
           />
         </div>
 
