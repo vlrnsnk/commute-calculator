@@ -3,6 +3,7 @@ import './App.css';
 import CommuteForm from './components/CommuteForm/CommuteForm';
 import { ThemeSwitcher } from './components/ThemeSwitcher/ThemeSwitcher';
 import type { CommuteData } from './types/common';
+import { CommuteResult } from './components/CommuteResult/CommuteResult';
 
 const App = (): ReactElement => {
   const [result, setResult] = useState<CommuteData | null>(null);
@@ -21,7 +22,7 @@ const App = (): ReactElement => {
           <ThemeSwitcher />
         </div>
         <CommuteForm onCalculate={handleCalculate}/>
-        {result && (<>Result</>)}
+        {result && <CommuteResult {...result} />}
       </div>
     </div>
   )
