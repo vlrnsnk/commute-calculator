@@ -43,7 +43,7 @@ const Input = ({
       // value={value === 0 ? '' : value}
       value={value}
       onChange={handleChange}
-      className='border rounded px-2 py-1 bg-gray-50 dark:bg-blue-900 dark:text-blue-100'
+      className='border rounded px-2 py-1 bg-gray-100 dark:bg-blue-900 dark:text-blue-100'
       {...rest}
     />
   );

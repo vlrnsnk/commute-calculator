@@ -12,20 +12,15 @@ const CommuteResult = ({
   const averageMiles: number = totalDays > 0 ? totalMiles / totalDays : 0;
 
   return (
-    <div className="bg-gray-50 dark:bg-blue-950 p-6 rounded-lg shadow-md mt-6 text-blue-800 dark:text-sky-200">
+    <div className="bg-gray-100 dark:bg-blue-950 p-6 rounded-lg shadow-md mt-6 text-blue-800 dark:text-sky-200">
       <div className="grid grid-cols-3 gap-4 mb-4">
         <div></div>
         <div className="font-semibold text-blue-800 dark:text-sky-200">Days</div>
         <div className="font-semibold text-blue-800 dark:text-sky-200">Miles each way</div>
 
-        <div>Enter in SNAP:</div>
-        <div>{totalDays}</div>
-        <div>{Math.round(averageMiles)}</div>
-      </div>
-
-      <div className="mt-4 p-4 bg-blue-100 dark:bg-sky-900 bg-opacity-30 rounded">
-        <p className="font-semibold text-blue-800 dark:text-sky-200">Total Weekly Commute:</p>
-        <p>{totalMiles} miles ({totalDays} days)</p>
+        <div className="font-semibold text-gray-800 dark:text-sky-200">Enter in SNAP:</div>
+        <div className="font-semibold text-gray-800 dark:text-sky-200">{totalDays}</div>
+        <div className="font-semibold text-gray-800 dark:text-sky-200">{Math.round(averageMiles)}</div>
       </div>
     </div>
   );

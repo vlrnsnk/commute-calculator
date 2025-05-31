@@ -28,7 +28,7 @@ const ThemeSwitcher = (): ReactElement => {
   return (
     <button
       onClick={(): void => setIsDarkMode(!isDarkMode)}
-      className='p-3 rounded-full text-blue-700 dark:text-sky-300 border border-blue-700 dark:border-sky-300'
+      className='p-3 rounded-full text-blue-700 dark:text-sky-300 border border-blue-700 dark:border-sky-300 cursor-pointer'
       aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       {isDarkMode ? <FiSun size={24} /> : <FiMoon size={24} />}
