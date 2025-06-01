@@ -1,6 +1,6 @@
-import type { ChangeEvent, InputHTMLAttributes, ReactElement } from 'react';
+import type { ChangeEvent, InputHTMLAttributes, ReactElement } from "react";
 
-type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
+type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & {
   min?: number;
   max?: number;
 };
@@ -17,7 +17,7 @@ const Input = ({
     const val = e.target.value;
 
     // Allow empty string (to support backspacing)
-    if (val === '') {
+    if (val === "") {
       onChange?.(e);
 
       return;
@@ -28,22 +28,25 @@ const Input = ({
       // Convert to number for range check
       const num = Number(val);
 
-      if ((min !== undefined && num < min) || (max !== undefined && num > max)) {
+      if (
+        (min !== undefined && num < min) ||
+        (max !== undefined && num > max)
+      ) {
         return;
       }
 
       onChange?.(e);
     }
-  }
+  };
 
   return (
     <input
-      type='text'
+      type="text"
       name={name}
       // value={value === 0 ? '' : value}
       value={value}
       onChange={handleChange}
-      className='border rounded px-2 py-1 bg-gray-100 dark:bg-blue-900 dark:text-blue-100'
+      className="border rounded px-2 py-1 bg-gray-100 dark:bg-blue-900 dark:text-blue-100"
       {...rest}
     />
   );

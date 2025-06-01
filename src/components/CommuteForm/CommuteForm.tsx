@@ -1,6 +1,11 @@
-import { useState, type ChangeEvent, type FormEvent, type ReactElement } from 'react';
-import type { CommuteData } from '../../types/common';
-import { Input } from '../Input/Input';
+import {
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+  type ReactElement,
+} from "react";
+import type { CommuteData } from "../../types/common";
+import { Input } from "../Input/Input";
 
 type CommuteFormProps = {
   onInputChange: (data: CommuteData) => void;
@@ -29,29 +34,33 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='space-y-6'>
-      <div className='bg-gray-100 dark:bg-blue-950 p-6 rounded-lg shadow-md'>
-        <h2 className='text-xl font-bold mb-4 text-gray-800 dark:text-sky-300 text-center pb-6'>
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="bg-gray-100 dark:bg-blue-950 p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-sky-300 text-center pb-6">
           Vehicle Usage - Work/School Combination
         </h2>
 
-        <div className='grid grid-cols-3 gap-4 mb-6'>
+        <div className="grid grid-cols-3 gap-4 mb-6">
           <div></div>
-          <div className='font-semibold text-blue-800 dark:text-sky-200'>Days</div>
-          <div className='font-semibold text-blue-800 dark:text-sky-200'>Miles each way</div>
+          <div className="font-semibold text-blue-800 dark:text-sky-200">
+            Days
+          </div>
+          <div className="font-semibold text-blue-800 dark:text-sky-200">
+            Miles each way
+          </div>
 
           <div className="font-semibold">Work:</div>
           <Input
-            name='workDays'
-            aria-label='workDays'
+            name="workDays"
+            aria-label="workDays"
             value={formData.workDays}
             onChange={handleChange}
             min={0}
             max={7}
           />
           <Input
-            name='workMiles'
-            aria-label='workMiles'
+            name="workMiles"
+            aria-label="workMiles"
             value={formData.workMiles}
             onChange={handleChange}
             min={0}
@@ -59,16 +68,16 @@ const CommuteForm = ({ onInputChange }: CommuteFormProps): ReactElement => {
 
           <div className="font-semibold">School:</div>
           <Input
-            name='schoolDays'
-            aria-label='schoolDays'
+            name="schoolDays"
+            aria-label="schoolDays"
             value={formData.schoolDays}
             onChange={handleChange}
             min={0}
             max={7}
           />
           <Input
-            name='schoolMiles'
-            aria-label='schoolMiles'
+            name="schoolMiles"
+            aria-label="schoolMiles"
             value={formData.schoolMiles}
             onChange={handleChange}
             min={0}
