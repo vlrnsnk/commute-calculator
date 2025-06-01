@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Commute Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a frontend project built with **Vite**, **React**, and **TypeScript**, deployed automatically to **Netlify** using **GitHub Actions**.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Install dependencies
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Run in development mode
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
 ```
+npm run dev
+```
+
+### 3. Build for production
+
+```
+npm run build
+```
+
+### 4. Preview production build locally
+
+```
+npm run preview
+```
+
+## ✅ Features
+
+* ⚡ Fast builds with Vite
+* 💡 React 18 with TypeScript
+* 🎨 Tailwind CSS (if used)
+* 🧹 Pre-configured ESLint + Prettier
+* 🔒 Git hooks with Husky & lint-staged
+* 🚀 Auto-deployment to Netlify via GitHub Actions
+
+## 🧪 Lint and Format
+
+Run ESLint and Prettier for the entire project:
+
+```
+npm run lint
+npm run format
+```
+
+## 📦 Deployment
+
+Every push to the `main` branch triggers a GitHub Actions workflow that:
+
+1. Installs dependencies
+2. Builds the app
+3. Deploys the `dist` folder to Netlify
+
+Ensure the following secrets are set in your GitHub repo:
+
+* `NETLIFY_AUTH_TOKEN`
+* `NETLIFY_SITE_ID`
